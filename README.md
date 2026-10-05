@@ -2,6 +2,8 @@
 
 **Grant money that follows shipped work, not promises.**
 
+[Live app](https://tranche-genlayer.vercel.app) · [Public source](https://github.com/JWattjr/Tranche) · [StudioNet escrow contract](https://explorer-studio.genlayer.com/address/0xC592951bd17f7c36CC196E4AE36E45df412dbA2a) · [Execution proof](https://tranche-genlayer.vercel.app/proof)
+
 Tranche is a milestone grant escrow on GenLayer StudioNet. A funder freezes a budget and observable acceptance criteria. A named recipient submits public evidence. Validators fetch each artifact themselves, judge one criterion at a time, and verify that the leader's quoted passage appears in their independently fetched source. Code releases the predetermined allocation only after all criterion judgments finalize as `MET`.
 
 The home page opens on a real three-milestone grant without requiring a wallet. Recorded receipts and fresh finalized reads are explicitly distinguished. See [deploy/proof.json](deploy/proof.json) for actual addresses, transaction hashes and outcomes; absence of proof is never replaced by a fabricated successful example.

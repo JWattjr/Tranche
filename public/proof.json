@@ -33,7 +33,19 @@
     "demo-judge-2-child-0": "0x173e7e6d57918b450b326c91965f9eb8c00d85337ec840a80c20c367b2f9e55c",
     "demo-judge-0-child-0-child-0": "0xa86f2853a164dca36f132e0b017730147589b7994d3f6012769799b7caf4a92c",
     "flow-propose": "0xeab43ec48229b06fd70d9352658ccefb9a8767fa42c849a4a9c28eaaf86453a0",
-    "flow-spec": "0x6956b6b4d2e12304ada552d51a9c49be9a8e056833217562a7e34003508058d5"
+    "flow-spec": "0x6956b6b4d2e12304ada552d51a9c49be9a8e056833217562a7e34003508058d5",
+    "flow-spec-child-0": "0x1f2f3a2a15816d8731fcf6ddf01b6fc8b8e57902e70427a5b06e23bcb3297b1b",
+    "flow-fund": "0xa1a8f0842459211adc47b5415f38319494f505f0b60413ce0c3f9faf6976ed24",
+    "flow-fund-child-0": "0xf59fdb5b226f16b8d721a67e721681f6b95b011262023be4e9f9009cc1d4b3db",
+    "flow-claim-1": "0x1a258583c938688a7218d4381055982bd1f0eaff990c9d6054d7538d7edfe64e",
+    "flow-claim-1-child-0": "0x434be14ccdf5f6fe1422f12f83c003c1248f705b0aea5a22d28c9fce7a44ca7d",
+    "flow-judge-1": "0xc3a1e40bc98a94a0423fb2ca29935d25dc624c4d3173cf5e3836a2880e6e7ffb",
+    "flow-judge-1-child-0": "0x0d036a55a0b121fef8e9b25ebc03c35d6a29fd4729a9766b1ee9d81761fb46cd",
+    "flow-claim-2": "0x8fd1cbe957c3442941f49122f6d8a8aa86976a74ca674e807d62076465393d5e",
+    "flow-claim-2-child-0": "0xdcf59eca0c1e3bc4c7deb8c8f71b8e81795318a56d7653b063ad72fe331e74bd",
+    "flow-judge-2": "0x77d6524f3f2a07dbe24b37c80e609247bfbd6e25fff275427e11b8095d9e789a",
+    "flow-judge-2-child-0": "0xd23ee4e7071b371733ca3192a9ad3164ecf4d67932dae0a6875c72869465a261",
+    "flow-refund": "0x3d719e87dd618f24f94cc1227ddb6dc77c79292de92fb1bf79ccc163f4a72280"
   },
   "probes": {
     "https://api.github.com/repos/prettier/prettier/releases/tags/3.6.2": {
@@ -345,5 +357,108 @@
         ]
       }
     ]
+  },
+  "flowRecord": {
+    "contract_balance": "3000000000000000",
+    "created_at": 1791230976,
+    "funded": "1000000000000000",
+    "funder": "0xdb433ff614bdd1ece21aa97221c3e0a7ecf79c92",
+    "held": "1000000000000000",
+    "id": "expiry-and-resubmission",
+    "milestones": [
+      {
+        "allocation": "1000000000000000",
+        "attempt": 2,
+        "criteria": [
+          {
+            "kind": "github_release",
+            "requirement": "The prettier/prettier release 0.0.0-tranche-missing-release exists and its release notes announce a formatting fix.",
+            "source": "prettier/prettier"
+          }
+        ],
+        "deadline": 1791231866,
+        "evidence": [
+          {
+            "kind": "github_release",
+            "sha": "0000000000000000000000000000000000000000",
+            "tag": "0.0.0-tranche-missing-release",
+            "url": "https://github.com/prettier/prettier/releases/tag/0.0.0-tranche-missing-release"
+          }
+        ],
+        "evidence_hash": "fa98c18bdf3dc7906c6dc899b64ecf8c9e63ba79d3847e2115d282ee22d2e38c",
+        "history": [
+          {
+            "attempt": 1,
+            "evidence": [
+              {
+                "kind": "github_release",
+                "sha": "0000000000000000000000000000000000000000",
+                "tag": "0.0.0-tranche-missing-release",
+                "url": "https://github.com/prettier/prettier/releases/tag/0.0.0-tranche-missing-release"
+              }
+            ],
+            "judgments": [
+              {
+                "availability": "unavailable",
+                "finalized": true,
+                "quote": "",
+                "reason": "The public artifact could not be verified at the supplied reference.",
+                "sha": "0000000000000000000000000000000000000000",
+                "timestamp": null,
+                "verdict": "INSUFFICIENT_EVIDENCE"
+              }
+            ],
+            "status": "INSUFFICIENT_EVIDENCE"
+          }
+        ],
+        "judgments": [
+          {
+            "availability": "unavailable",
+            "finalized": true,
+            "quote": "",
+            "reason": "The public artifact could not be verified at the supplied reference.",
+            "sha": "0000000000000000000000000000000000000000",
+            "timestamp": null,
+            "verdict": "INSUFFICIENT_EVIDENCE"
+          }
+        ],
+        "refunded": "0",
+        "released": "0",
+        "settled_at": 1791231556,
+        "spec_checks": [
+          {
+            "accepted": true,
+            "finalized": true,
+            "reason": "The criterion names a concrete public artifact (GitHub release '0.0.0-tranche-missing-release' in prettier/prettier) and specifies a concrete observable property (release notes announce a formatting fix), which a reviewer can directly verify by reading the release notes. The requirement is not subjective and does not instruct the judge."
+          }
+        ],
+        "status": "INSUFFICIENT_EVIDENCE",
+        "submitted_at": 1791231440,
+        "title": "Missing release retry"
+      }
+    ],
+    "refunded": "0",
+    "released": "0",
+    "spec": {
+      "budget": "1000000000000000",
+      "milestones": [
+        {
+          "allocation": "1000000000000000",
+          "criteria": [
+            {
+              "kind": "github_release",
+              "requirement": "The prettier/prettier release 0.0.0-tranche-missing-release exists and its release notes announce a formatting fix.",
+              "source": "prettier/prettier"
+            }
+          ],
+          "deadline": 1791231866,
+          "title": "Missing release retry"
+        }
+      ],
+      "recipient": "0xdb433ff614bdd1ece21aa97221c3e0a7ecf79c92",
+      "title": "Expiry and resubmission proof"
+    },
+    "spec_hash": "2612f91bcad1ce1303236ef2f0c90dda1818df5bb36aa6e745eee2c3ff8e9014",
+    "status": "OPEN"
   }
 }

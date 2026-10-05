@@ -1,0 +1,27 @@
+{
+  "contributionType": "Projects",
+  "projectName": "Tranche",
+  "primaryTag": "Grants",
+  "tag1": "Escrow",
+  "tag2": "Artifact Verification",
+  "oneLiner": "Grant money that follows shipped work, not promises.",
+  "description": "Tranche is a milestone grant escrow on GenLayer StudioNet. A funder names a recipient, freezes up to three milestones and deposits an exact budget after validators accept the observable criteria. Recipients submit allowlisted public artifacts pinned to their source. Validators fetch independently, judge one criterion at a time, and check the leader's quoted passage against their own evidence. Contract code releases only the fixed allocation when every criterion is MET. NOT_MET and INSUFFICIENT_EVIDENCE hold money; one resubmission is allowed before the deadline, followed by a permissionless expiry refund. Native GenLayer appeals precede finalized callbacks. The live Prettier grant proves all three outcomes and a separate credited native transfer. The ledger distinguishes recorded proof from fresh chain reads. Public source includes direct tests, resumable transaction tracking and a tutorial. StudioNet GEN is simulated.",
+  "howTo": [
+    {"heading":"Inspect the completed grant","instruction":"Open the website without a wallet. Inspect the three milestones, released/held amounts, frozen criteria, quoted passages, artifact URLs and transaction links. Read live state switches from recorded proof to a timestamped finalized chain read."},
+    {"heading":"Write a verifiable agreement","instruction":"Choose Create grant. Enter a recipient, budget, fixed allocations, UTC deadlines and public artifact criteria. Allocations must sum exactly. Connect MetaMask with the GenLayer plugin on StudioNet 61999, validate each criterion, then fund only after SPEC_ACCEPTED finalizes."},
+    {"heading":"Claim and track","instruction":"Connect the named recipient. Attach evidence, preview what validators fetch, then sign the claim and narrow judgments. Accepted is still appealable; wait for finalized successful callbacks and the native transfer credit. Reloading retains submitted hashes and resumes tracking."},
+    {"heading":"Inspect a hold or expiry","instruction":"A held milestone permits one resubmission before its deadline. After the final deadline, anyone may trigger the refund. An on-time pending judgment receives a one-hour grace period. Open Execution proof and run npm run verify:proof for read-only verification."}
+  ],
+  "expectedOutcome": "The real third-party Prettier 3.6.2 grant finalizes MET, NOT_MET and INSUFFICIENT_EVIDENCE. Exactly 0.001 GEN is credited to the recipient; 0.002 GEN remains held. The separate live expiry grant retains two attempts and its first judgment history, then refunds its 0.001 GEN after the deadline. Local tests exercise invalid clauses, authorization, source binding and duplicate settlement. All GEN is simulated StudioNet value; verify the latest status and remaining browser checks in docs/VERIFICATION.md before submission.",
+  "contractLinks": ["https://explorer-studio.genlayer.com/address/0xC592951bd17f7c36CC196E4AE36E45df412dbA2a"],
+  "website": "https://tranche-genlayer.vercel.app",
+  "github": "https://github.com/JWattjr/Tranche",
+  "demoVideo": "",
+  "evidence": [
+    "https://tranche-genlayer.vercel.app/proof",
+    "https://tranche-genlayer.vercel.app/proof.json",
+    "https://github.com/JWattjr/Tranche/blob/main/docs/VERIFICATION.md",
+    "https://github.com/JWattjr/Tranche/blob/main/docs/TUTORIAL.md",
+    "https://github.com/JWattjr/Tranche/blob/main/docs/DEMO.md"
+  ]
+}

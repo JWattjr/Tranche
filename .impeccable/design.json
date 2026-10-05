@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-05T20:22:59.291Z",
+  "title": "Design System: Tranche",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cold paper",
+        "tonalRamp": [
+          "oklch(15.00% 0.00669 115.71)",
+          "oklch(26.43% 0.00669 115.71)",
+          "oklch(37.86% 0.00669 115.71)",
+          "oklch(49.29% 0.00669 115.71)",
+          "oklch(60.71% 0.00669 115.71)",
+          "oklch(72.14% 0.00669 115.71)",
+          "oklch(83.57% 0.00669 115.71)",
+          "oklch(95.00% 0.00669 115.71)"
+        ],
+        "rampOrigin": "Synthesized OKLCH display ramp; not additional production palette tokens."
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Agreement white",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ],
+        "rampOrigin": "Synthesized OKLCH display ramp; not additional production palette tokens."
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Charcoal ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.02477 161.12)",
+          "oklch(26.43% 0.02477 161.12)",
+          "oklch(37.86% 0.02477 161.12)",
+          "oklch(49.29% 0.02477 161.12)",
+          "oklch(60.71% 0.02477 161.12)",
+          "oklch(72.14% 0.02477 161.12)",
+          "oklch(83.57% 0.02477 161.12)",
+          "oklch(95.00% 0.02477 161.12)"
+        ],
+        "rampOrigin": "Synthesized OKLCH display ramp; not additional production palette tokens."
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.01919 156.49)",
+          "oklch(26.43% 0.01919 156.49)",
+          "oklch(37.86% 0.01919 156.49)",
+          "oklch(49.29% 0.01919 156.49)",
+          "oklch(60.71% 0.01919 156.49)",
+          "oklch(72.14% 0.01919 156.49)",
+          "oklch(83.57% 0.01919 156.49)",
+          "oklch(95.00% 0.01919 156.49)"
+        ],
+        "rampOrigin": "Synthesized OKLCH display ramp; not additional production palette tokens."
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Register rule",
+        "tonalRamp": [
+          "oklch(15.00% 0.01205 133.39)",
+          "oklch(26.43% 0.01205 133.39)",
+          "oklch(37.86% 0.01205 133.39)",
+          "oklch(49.29% 0.01205 133.39)",
+          "oklch(60.71% 0.01205 133.39)",
+          "oklch(72.14% 0.01205 133.39)",
+          "oklch(83.57% 0.01205 133.39)",
+          "oklch(95.00% 0.01205 133.39)"
+        ],
+        "rampOrigin": "Synthesized OKLCH display ramp; not additional production palette tokens."
+      },
+      "green": {
+        "role": "primary",
+        "displayName": "Forest authorization",
+        "tonalRamp": [
+          "oklch(15.00% 0.04827 160.93)",
+          "oklch(26.43% 0.04827 160.93)",
+          "oklch(37.86% 0.04827 160.93)",
+          "oklch(49.29% 0.04827 160.93)",
+          "oklch(60.71% 0.04827 160.93)",
+          "oklch(72.14% 0.04827 160.93)",
+          "oklch(83.57% 0.04827 160.93)",
+          "oklch(95.00% 0.04827 160.93)"
+        ],
+        "rampOrigin": "Synthesized OKLCH display ramp; not additional production palette tokens."
+      },
+      "green-wash": {
+        "role": "primary",
+        "displayName": "Authorization wash",
+        "tonalRamp": [
+          "oklch(15.00% 0.01355 134.90)",
+          "oklch(26.43% 0.01355 134.90)",
+          "oklch(37.86% 0.01355 134.90)",
+          "oklch(49.29% 0.01355 134.90)",
+          "oklch(60.71% 0.01355 134.90)",
+          "oklch(72.14% 0.01355 134.90)",
+          "oklch(83.57% 0.01355 134.90)",
+          "oklch(95.00% 0.01355 134.90)"
+        ],
+        "rampOrigin": "Synthesized OKLCH display ramp; not additional production palette tokens."
+      },
+      "ochre": {
+        "role": "secondary",
+        "displayName": "Muted ochre",
+        "tonalRamp": [
+          "oklch(15.00% 0.08235 77.63)",
+          "oklch(26.43% 0.08235 77.63)",
+          "oklch(37.86% 0.08235 77.63)",
+          "oklch(49.29% 0.08235 77.63)",
+          "oklch(60.71% 0.08235 77.63)",
+          "oklch(72.14% 0.08235 77.63)",
+          "oklch(83.57% 0.08235 77.63)",
+          "oklch(95.00% 0.08235 77.63)"
+        ],
+        "rampOrigin": "Synthesized OKLCH display ramp; not additional production palette tokens."
+      },
+      "ochre-wash": {
+        "role": "secondary",
+        "displayName": "Hold wash",
+        "tonalRamp": [
+          "oklch(15.00% 0.02625 90.10)",
+          "oklch(26.43% 0.02625 90.10)",
+          "oklch(37.86% 0.02625 90.10)",
+          "oklch(49.29% 0.02625 90.10)",
+          "oklch(60.71% 0.02625 90.10)",
+          "oklch(72.14% 0.02625 90.10)",
+          "oklch(83.57% 0.02625 90.10)",
+          "oklch(95.00% 0.02625 90.10)"
+        ],
+        "rampOrigin": "Synthesized OKLCH display ramp; not additional production palette tokens."
+      },
+      "red": {
+        "role": "tertiary",
+        "displayName": "Rejection red",
+        "tonalRamp": [
+          "oklch(15.00% 0.11576 27.82)",
+          "oklch(26.43% 0.11576 27.82)",
+          "oklch(37.86% 0.11576 27.82)",
+          "oklch(49.29% 0.11576 27.82)",
+          "oklch(60.71% 0.11576 27.82)",
+          "oklch(72.14% 0.11576 27.82)",
+          "oklch(83.57% 0.11576 27.82)",
+          "oklch(95.00% 0.11576 27.82)"
+        ],
+        "rampOrigin": "Synthesized OKLCH display ramp; not additional production palette tokens."
+      },
+      "red-wash": {
+        "role": "tertiary",
+        "displayName": "Rejection wash",
+        "tonalRamp": [
+          "oklch(15.00% 0.01276 48.59)",
+          "oklch(26.43% 0.01276 48.59)",
+          "oklch(37.86% 0.01276 48.59)",
+          "oklch(49.29% 0.01276 48.59)",
+          "oklch(60.71% 0.01276 48.59)",
+          "oklch(72.14% 0.01276 48.59)",
+          "oklch(83.57% 0.01276 48.59)",
+          "oklch(95.00% 0.01276 48.59)"
+        ],
+        "rampOrigin": "Synthesized OKLCH display ramp; not additional production palette tokens."
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Document title",
+        "purpose": "Grant and create-page title, with documented mobile overrides."
+      },
+      "headline": {
+        "displayName": "Section heading",
+        "purpose": "Working section labels."
+      },
+      "body": {
+        "displayName": "Working text",
+        "purpose": "General body copy."
+      },
+      "evidence": {
+        "displayName": "Evidence reading",
+        "purpose": "Quoted source passages."
+      },
+      "operational": {
+        "displayName": "Operational metadata",
+        "purpose": "Final criterion, verdict, deadline, reason and receipt scale."
+      },
+      "button": {
+        "displayName": "Action label",
+        "purpose": "Action controls."
+      },
+      "status": {
+        "displayName": "Written verdict",
+        "purpose": "Released and held outcomes."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "disclosure-ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Chevron rotation in inline disclosure."
+      },
+      {
+        "name": "disclosure-duration",
+        "value": "0.2s",
+        "purpose": "Disclosure chevron transform."
+      },
+      {
+        "name": "button-hover-duration",
+        "value": "0.15s",
+        "purpose": "Button background transition."
+      },
+      {
+        "name": "tracking-spinner",
+        "value": "1.5s linear infinite",
+        "purpose": "Active-read and operation spinners."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation:none!important;transition:none!important",
+        "purpose": "Applied globally when prefers-reduced-motion is reduce; smooth scrolling also becomes auto."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-workspace",
+        "value": "min-width:1350px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "max-width:980px"
+      },
+      {
+        "name": "mobile-stack",
+        "value": "max-width:740px"
+      }
+    ],
+    "verification": {
+      "reviewDisposition": "ship for three scored corrections",
+      "verifiedScope": "Home composition and first expanded clause in complete desktop/mobile captures; settlement rule placement, operational type scale and clause-number contrast resolved.",
+      "sourceSupportedOnly": [
+        "create route",
+        "expanded claim form",
+        "keyboard interaction",
+        "disclosure motion",
+        "live-state refresh",
+        "wallet signing"
+      ],
+      "shippingRasters": 0
+    }
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Sign or initiate the next concrete agreement action.",
+      "html": "<button class=\"ds-primary\">Validate criteria</button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:43px;padding:10px 16px;border:1px solid #b7c2b5;border-radius:var(--radius,3px);font:600 12px 'Manrope',sans-serif;text-decoration:none;cursor:pointer;transition:background .15s;background:var(--green,#355645);color:var(--surface,#fff);border-color:var(--green,#355645)}.ds-primary:hover{background:#294334}.ds-primary:focus-visible{outline:3px solid #758f65;outline-offset:4px;}.ds-primary:disabled{opacity:.48;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Inspect, attach, or resume a local step.",
+      "html": "<button class=\"ds-secondary\">Attach evidence</button>",
+      "css": ".ds-secondary{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:43px;padding:10px 16px;border:1px solid #b7c2b5;border-radius:var(--radius,3px);font:600 12px 'Manrope',sans-serif;text-decoration:none;cursor:pointer;transition:background .15s;background:var(--surface,#fff);color:var(--ink,#223129)}.ds-secondary:hover{background:var(--green-wash,#e8eee5)}.ds-secondary:focus-visible{outline:3px solid #758f65;outline-offset:4px;}.ds-secondary:disabled{opacity:.48;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}"
+    },
+    {
+      "name": "Text action",
+      "kind": "button",
+      "refersTo": "button-text",
+      "description": "Read a fresh state or add a criterion without a filled control.",
+      "html": "<button class=\"ds-text\">Read live state</button>",
+      "css": ".ds-text{display:inline-flex;align-items:center;gap:7px;background:none;border:none;padding:5px 0;font:600 12px 'Manrope',sans-serif;color:var(--green,#355645);cursor:pointer}.ds-text:hover{text-decoration:underline;text-underline-offset:4px}.ds-text:focus-visible{outline:3px solid #758f65;outline-offset:4px;}.ds-text:disabled{opacity:.48;cursor:not-allowed}"
+    },
+    {
+      "name": "Agreement field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "A labelled public-source field with a local focus stroke.",
+      "html": "<label class=\"ds-label\">GitHub repository<input class=\"ds-input\" placeholder=\"owner/repository\" spellcheck=\"false\"/></label>",
+      "css": ".ds-label{display:block;font:600 11px 'Manrope',sans-serif;color:var(--ink,#223129)}.ds-input{display:block;margin-top:7px;width:100%;min-width:0;border:1px solid #b5c0b4;border-radius:var(--radius,3px);background:var(--surface,#fff);color:var(--ink,#223129);padding:12px 13px;font:400 12px 'Manrope',sans-serif;caret-color:var(--green,#355645)}.ds-input:hover{border-color:var(--green,#355645)}.ds-input:focus{outline:2px solid #758f65;outline-offset:1px}.ds-input:focus-visible{outline:3px solid #758f65;outline-offset:4px}@media(max-width:740px){.ds-label{font-size:12px}.ds-input{font-size:14px}}"
+    },
+    {
+      "name": "Register navigation",
+      "kind": "nav",
+      "description": "Ledger and execution-proof routes with a local active underline.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a class=\"ds-nav-link\" href=\"#ledger\" aria-current=\"page\">Grant ledger</a><a class=\"ds-nav-link\" href=\"#proof\">Execution proof</a></nav>",
+      "css": ".ds-nav{display:flex;gap:27px;font:400 12px 'Manrope',sans-serif;padding-bottom:33px}.ds-nav-link{text-decoration:none;color:var(--muted,#5f6b63);position:relative}.ds-nav-link:hover{color:var(--green,#355645)}.ds-nav-link[aria-current=page]{color:var(--green,#355645);font-weight:700}.ds-nav-link[aria-current=page]:after{position:absolute;content:'';height:2px;background:var(--green,#355645);bottom:-33px;left:0;right:0}.ds-nav-link:focus-visible{outline:3px solid #758f65;outline-offset:4px;}@media(max-width:740px){.ds-nav{gap:28px;padding-bottom:17px}.ds-nav-link[aria-current=page]:after{bottom:-17px}}"
+    },
+    {
+      "name": "Released verdict",
+      "kind": "chip",
+      "refersTo": "status-met",
+      "description": "Met criteria and their fixed released allocation.",
+      "html": "<span class=\"ds-met\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"m20 6-11 11-5-5\"/></svg><span>MET · Released</span></span>",
+      "css": ".ds-met{display:inline-flex;align-items:center;gap:6px;min-height:25px;padding:3px 8px;font:700 12px/1.4 'Manrope',sans-serif;border-radius:2px;background:var(--green-wash,#e8eee5);color:var(--green,#355645)}.ds-met svg{flex-shrink:0}@media(max-width:740px){.ds-met{padding:5px 8px}}"
+    },
+    {
+      "name": "Held verdict",
+      "kind": "chip",
+      "refersTo": "status-held",
+      "description": "Missing or not-met evidence keeps money in escrow.",
+      "html": "<span class=\"ds-held\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/></svg><span>INSUFFICIENT EVIDENCE · Held</span></span>",
+      "css": ".ds-held{display:inline-flex;align-items:center;gap:6px;min-height:25px;padding:3px 8px;font:700 12px/1.4 'Manrope',sans-serif;border-radius:2px;background:var(--ochre-wash,#f3ecd9);color:var(--ochre,#75551e)}.ds-held svg{flex-shrink:0}@media(max-width:740px){.ds-held{padding:5px 8px}}"
+    },
+    {
+      "name": "Inline clause disclosure",
+      "kind": "card",
+      "refersTo": "clause",
+      "description": "A ruled clause opens its criteria and source passage in place.",
+      "html": "<article class=\"ds-clause\"><div class=\"ds-clause-top\"><span class=\"ds-number\">01</span><h3 class=\"ds-title\">Release notes</h3><strong class=\"ds-amount\">1 GEN</strong></div><details class=\"ds-details\" open><summary>Inspect criteria &amp; evidence <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"m6 9 6 6 6-6\"/></svg></summary><div class=\"ds-body\"><p class=\"ds-criterion\">The release notes announce wallet connection support.</p><blockquote class=\"ds-quote\">“The release notes announce wallet connection support.”</blockquote></div></details></article>",
+      "css": ".ds-clause{border:1px solid var(--line,#d8ddd5);background:var(--surface,#fff);color:var(--ink,#223129);font-family:'Manrope',sans-serif}.ds-clause-top{display:flex;align-items:flex-start;gap:18px;padding:24px 23px 15px}.ds-number{font:400 21px/1.4 'Libre Baskerville',serif;color:var(--muted,#5f6b63)}.ds-title{flex:1;margin:0;font:600 16px/1.45 'Manrope',sans-serif}.ds-amount{font-size:16px;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}.ds-details{border-top:1px solid var(--line,#d8ddd5)}.ds-details>summary{display:flex;justify-content:space-between;align-items:center;list-style:none;cursor:pointer;padding:13px 23px;font-size:11px;font-weight:600;color:var(--muted,#5f6b63)}.ds-details>summary::-webkit-details-marker{display:none}.ds-details[open]>summary{border-bottom:1px solid var(--line,#d8ddd5)}.ds-details>summary:hover{color:var(--green,#355645)}.ds-details>summary:focus-visible{outline:3px solid #758f65;outline-offset:4px;}.ds-details summary svg{transition:transform .2s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-details[open]>summary svg{transform:rotate(180deg)}.ds-body{padding:19px 23px}.ds-criterion{font-size:14px;line-height:1.75;margin:11px 0 14px}.ds-quote{margin:0;padding:16px 18px;background:#f3f5ef;font-size:14px;line-height:1.8;overflow-wrap:anywhere;white-space:pre-wrap}@media(max-width:740px){.ds-clause-top{padding:20px 17px 13px;gap:13px;flex-wrap:wrap}.ds-number{font-size:19px}.ds-title{flex-basis:160px}.ds-amount{font-size:14px;margin-left:auto}.ds-details>summary{padding:12px 17px;font-size:12px}.ds-body{padding:16px 17px}.ds-quote{padding:13px}}@media(prefers-reduced-motion:reduce){.ds-details summary svg{transition:none}}"
+    },
+    {
+      "name": "Tracked operation",
+      "kind": "custom",
+      "description": "A persisted transaction sequence exposes phase and an explicit resume action.",
+      "html": "<section class=\"ds-operation\" aria-live=\"polite\"><div class=\"ds-operation-top\"><strong>Claim and judge milestone 1</strong><span>ready for signature</span></div><p>Step 1 of 2 · claim</p><button class=\"ds-resume\">Resume and sign next step</button><p class=\"ds-operation-note\">Submitted hashes are retained after reload.</p></section>",
+      "css": ".ds-operation{background:var(--green-wash,#e8eee5);border:1px solid #c9d7c5;padding:18px 21px;margin-bottom:23px;font:400 12px/1.65 'Manrope',sans-serif;color:var(--ink,#223129)}.ds-operation-top{display:flex;align-items:center;gap:10px}.ds-operation-top>span{margin-left:auto;color:var(--muted,#5f6b63);font-size:11px}.ds-operation>p{margin:8px 0 0}.ds-resume{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:43px;padding:10px 16px;border:1px solid #b7c2b5;border-radius:var(--radius,3px);font:600 12px 'Manrope',sans-serif;text-decoration:none;cursor:pointer;transition:background .15s;margin-top:12px;background:var(--surface,#fff);color:var(--ink,#223129)}.ds-resume:hover{background:var(--green-wash,#e8eee5)}.ds-resume:focus-visible{outline:3px solid #758f65;outline-offset:4px;}.ds-operation-note{color:var(--muted,#5f6b63)}@media(max-width:740px){.ds-operation{padding:15px}.ds-operation-top{flex-wrap:wrap;gap:7px}.ds-operation-top>span{margin-left:0;width:100%}}@media(prefers-reduced-motion:reduce){.ds-resume{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Escrow Instruction Register",
+    "overview": "Cold paper, charcoal ink and ruled agreements give Tranche the character of a working grant register. Libre Baskerville supplies the document title and clause numerals; Manrope carries the operational reading. Forest green marks authorization and released outcomes, while muted ochre distinguishes held allocations.\n\nThe interface earns trust through fixed amounts, dated state provenance, inspectable criteria, verbatim passages and transaction links. Its signature is an inline clause disclosure: evidence opens within the agreement instead of moving into an unrelated overlay. The implemented surface uses CSS and inline vector icons; no shipping raster assets are required.",
+    "keyCharacteristics": [
+      "Cold paper surrounding white, ruled agreements.",
+      "Serif document titles with precise sans-serif working text.",
+      "Fixed amounts, numbered clauses and local evidence disclosure.",
+      "Explicit released, held and error states.",
+      "Recorded proof distinguished from a fresh finalized-state read."
+    ],
+    "rules": [
+      {
+        "name": "The Outcome Rule",
+        "body": "Pair every verdict color with its written outcome; color alone must not carry the settlement meaning.",
+        "section": "colors"
+      },
+      {
+        "name": "The Evidence Reading Rule",
+        "body": "Preserve the final operational scale and allow metadata to wrap; do not shrink criteria or source passages to fit a row.",
+        "section": "typography"
+      },
+      {
+        "name": "The Register Rule",
+        "body": "Use rules and tone to separate working regions; retain the flat document hierarchy.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep fixed amounts adjacent to their clauses and the release/hold rule adjacent to the summary.",
+      "Do preserve written provenance when switching between recorded proof and fresh finalized-state reads.",
+      "Do use the final 12 px operational and 14 px evidence scales with wrapping.",
+      "Do use inline source passages and separate artifact and transaction links.",
+      "Do retain ruled, flat document panels and visible focus treatments."
+    ],
+    "donts": [
+      "Don't represent held money or submitted transactions as completed releases.",
+      "Don't replace written verdicts with color-only indicators.",
+      "Don't compress evidence into miniature text to keep rows on one line.",
+      "Don't add decorative raster artwork or floating shadows to the existing register.",
+      "Don't describe source-supported wallet behavior as browser-verified execution."
+    ]
+  }
+}
+
