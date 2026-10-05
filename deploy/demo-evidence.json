@@ -1,0 +1,6 @@
+{
+  "created_at": "2025-06-27T02:51:59Z",
+  "body": "## What's Changed\r\n* Add missing blank line around code block by @fisker in https://github.com/prettier/prettier/pull/17675\r\n\r\n🔗 [Changelog](https://github.com/prettier/prettier/blob/main/CHANGELOG.md#362)",
+  "sha": "7a8b05f41574633fd3af5298f3eeaf33567ad3d3",
+  "url": "https://github.com/prettier/prettier/releases/tag/3.6.2"
+}

@@ -1,0 +1,349 @@
+{
+  "network": "StudioNet",
+  "chainId": 61999,
+  "simulated": true,
+  "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+  "transactions": {
+    "access-2": "0xcd5f53e37862ce44d2276efaccb3bac694bfc804953c1d0244e2c7874669951e",
+    "access-1": "0x3099934d50edf605ed6f2f4a1f104cbf9e429a32846a76a2b06c23f015e83d8e",
+    "probe-deploy": "0xb4456f0143a5e3cf7f66394b76972d3d5e2c8556d544a34bd29bfcf4b1fc4a79",
+    "access-0": "0xc809b83afa864fc2134e2e2b3bc0129526990b1bbc16507b9231db79fd825b10",
+    "access-3": "0xcf4ef6e6414db69e42219fcf042531830df637c5128873439ecb8e8071d0010e",
+    "deploy": "0x6e556802826e37534cf6c98e319a8598a0e9d1af8ba2bd63ac541f1d93170dd1",
+    "demo-propose": "0x78863895da37a45f1bfed2836d4f160578331dcbc6ce4886edfd2d8a46bad18f",
+    "demo-spec-0": "0xc3133e7b7d83073dabeca315abcfbde4b4352742289f9eadb3c8735f44330ff1",
+    "demo-spec-0-child-0": "0xcf5efb204e7b1f0096975477a83596636e46d49c458c94506cf41f59e9a6041d",
+    "demo-spec-1": "0x1bf071756d99abb15828c1d2be8f80f78bde965eef441c049058f7e8cf2a48fc",
+    "demo-spec-1-child-0": "0x1fcfb79fd4be19382076a9eb11a996d2b06999a4fb31173a22e9900825713ec3",
+    "demo-spec-2": "0x2c342b76b8db94291c7b85990a0e3b3e00d8775fd177e6034e85b98fa80829ee",
+    "demo-spec-2-child-0": "0x4ced56d8fa7ab46875393df59e36299647bdef95e746ff91831820b1787774db",
+    "demo-fund": "0x608a6ca7caff9ed00f77488a220b65e2e0ce8bd8fa40f5aa14ce7f5c0c35a5b7",
+    "demo-fund-child-0": "0xed1538106743a4baf98161dd0e30af49d62b08cefb8a2b5e0a618ff3367903fe",
+    "demo-claim-0": "0x80be6ed3d6b4686f43c6bb8e684bb4943f4c1d012e07bb2ab0086fe6dca759c6",
+    "demo-claim-0-child-0": "0x816d9d8024c0da3055c73b04f354ae114087b3ee9b1b4b0fb8516af8c83b923e",
+    "demo-judge-0": "0x86ffcad82c630107428c0b51f49bf973879cb945d8ae81833e8f855d2a40199e",
+    "demo-judge-0-child-0": "0xc611680ab900d7cb259e55233cb74ad1c7ee03c3d3a9505ed3353388974a5094",
+    "demo-claim-1": "0xe3e6a0f30cba74ff13b79348982874d39ad643f9b6bce736df1de9082d4ba792",
+    "demo-claim-1-child-0": "0xf54c4bc775c31469185a47b58ceb64147f9a3d7fcb3e507e5d0a05e7de524daa",
+    "demo-judge-1": "0x5aeeeedf05cbdaa67cf4e764d329d4cdfcb68a88e186e0ebeae0d1b0215c323d",
+    "demo-judge-1-child-0": "0x494695c970ad8adc4b8d5e5364245909c64bae0843e590911096c18f90eb4f62",
+    "demo-claim-2": "0xc7b9a267774c58799922e907aa99ed9e3f301567c5d2047e28f4c27550c553dd",
+    "demo-claim-2-child-0": "0xe5611a377d5fc9bc74053781155a74bff7fb932fd429993f7fec4860be56dcef",
+    "demo-judge-2": "0x7e9f965c48c5d8bd06a1d5a43ee9944f737b63efcffda739f773f0ac0ba3295b",
+    "demo-judge-2-child-0": "0x173e7e6d57918b450b326c91965f9eb8c00d85337ec840a80c20c367b2f9e55c",
+    "demo-judge-0-child-0-child-0": "0xa86f2853a164dca36f132e0b017730147589b7994d3f6012769799b7caf4a92c",
+    "flow-propose": "0xeab43ec48229b06fd70d9352658ccefb9a8767fa42c849a4a9c28eaaf86453a0",
+    "flow-spec": "0x6956b6b4d2e12304ada552d51a9c49be9a8e056833217562a7e34003508058d5"
+  },
+  "probes": {
+    "https://api.github.com/repos/prettier/prettier/releases/tags/3.6.2": {
+      "reachable": true,
+      "sample": "{\"url\":\"https://api.github.com/repos/prettier/prettier/releases/228213960\",\"assets_url\":\"https://api.github.com/repos/prettier/prettier/releases/228213960/assets\",\"upload_url\":\"https://uploads.github.com/repos/prettier/prettier/releases/228",
+      "status": 200
+    },
+    "https://raw.githubusercontent.com/prettier/prettier/main/README.md": {
+      "reachable": true,
+      "sample": "[![Prettier Banner](https://unpkg.com/prettier-logo@1.0.3/images/prettier-banner-light.svg)](https://prettier.io)\n\n<h2 align=\"center\">Opinionated Code Formatter</h2>\n\n<p align=\"center\">\n  <em>\n    JavaScript\n    · TypeScript\n    · Flow\n    ",
+      "status": 200
+    },
+    "https://registry.npmjs.org/is-number/7.0.0": {
+      "reachable": true,
+      "sample": "{\"bugs\":{\"url\":\"https://github.com/jonschlinkert/is-number/issues\"},\"dist\":{\"shasum\":\"7535345b896734d5f80c4d06c50955527a14f12b\",\"tarball\":\"https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz\",\"fileCount\":4,\"integrity\":\"sha512-41Cifkg",
+      "status": 200
+    },
+    "https://web.archive.org/cdx/search/cdx?url=example.com&output=json&limit=1&filter=statuscode:200": {
+      "reachable": true,
+      "sample": "[[\"urlkey\",\"timestamp\",\"original\",\"mimetype\",\"statuscode\",\"digest\",\"length\"],\n[\"com,example)/\",\"20020120142510\",\"http://example.com:80/\",\"text/html\",\"200\",\"HT2DYGA5UKZCPBSFVCV3JOBXGW2G5UUA\",\"1792\"]]\n",
+      "status": 200
+    }
+  },
+  "submissionReady": false,
+  "probeContract": "0x373220D40aEceFb78191EE13C83da7142971E274",
+  "grantId": "prettier-release-grant",
+  "contract": "0xC592951bd17f7c36CC196E4AE36E45df412dbA2a",
+  "spec": {
+    "title": "Public release verification",
+    "recipient": "0xdb433ff614bdd1ece21aa97221c3e0a7ecf79c92",
+    "budget": "3000000000000000",
+    "milestones": [
+      {
+        "title": "Ship the formatting fix",
+        "allocation": "1000000000000000",
+        "deadline": 1791316347,
+        "criteria": [
+          {
+            "kind": "github_release",
+            "source": "prettier/prettier",
+            "requirement": "The prettier/prettier 3.6.2 release notes announce a fix adding a missing blank line around a code block."
+          }
+        ]
+      },
+      {
+        "title": "Ship native PDF export",
+        "allocation": "1000000000000000",
+        "deadline": 1791316347,
+        "criteria": [
+          {
+            "kind": "github_release",
+            "source": "prettier/prettier",
+            "requirement": "The prettier/prettier 3.6.2 release notes announce a new native PDF export feature."
+          }
+        ]
+      },
+      {
+        "title": "Publish the next release",
+        "allocation": "1000000000000000",
+        "deadline": 1791316347,
+        "criteria": [
+          {
+            "kind": "github_release",
+            "source": "prettier/prettier",
+            "requirement": "The prettier/prettier release 0.0.0-tranche-missing-release exists and its release notes announce a formatting fix."
+          }
+        ]
+      }
+    ]
+  },
+  "record": {
+    "contract_balance": "2000000000000000",
+    "created_at": 1791229959,
+    "funded": "3000000000000000",
+    "funder": "0xdb433ff614bdd1ece21aa97221c3e0a7ecf79c92",
+    "held": "2000000000000000",
+    "id": "prettier-release-grant",
+    "milestones": [
+      {
+        "allocation": "1000000000000000",
+        "attempt": 1,
+        "criteria": [
+          {
+            "kind": "github_release",
+            "requirement": "The prettier/prettier 3.6.2 release notes announce a fix adding a missing blank line around a code block.",
+            "source": "prettier/prettier"
+          }
+        ],
+        "deadline": 1791316347,
+        "evidence": [
+          {
+            "kind": "github_release",
+            "sha": "7a8b05f41574633fd3af5298f3eeaf33567ad3d3",
+            "tag": "3.6.2",
+            "url": "https://github.com/prettier/prettier/releases/tag/3.6.2"
+          }
+        ],
+        "evidence_hash": "9aa686a06d1e9b0c61dfb7df73037f5caf7d76540fd488fbcf9a2b858f7b67be",
+        "history": [],
+        "judgments": [
+          {
+            "availability": "available",
+            "finalized": true,
+            "quote": "Add missing blank line around code block by @fisker in https://github.com/prettier/prettier/pull/17675",
+            "reason": "The 3.6.2 release notes explicitly announce a fix that adds a missing blank line around a code block, directly matching the criterion.",
+            "sha": "7a8b05f41574633fd3af5298f3eeaf33567ad3d3",
+            "timestamp": 1750992719,
+            "verdict": "MET"
+          }
+        ],
+        "refunded": "0",
+        "released": "1000000000000000",
+        "settled_at": 1791230501,
+        "spec_checks": [
+          {
+            "accepted": true,
+            "finalized": true,
+            "reason": "Requirement specifies a concrete, observable property (release notes content) of a specific artifact (GitHub release 3.6.2)."
+          }
+        ],
+        "status": "MET",
+        "submitted_at": 1791230379,
+        "title": "Ship the formatting fix"
+      },
+      {
+        "allocation": "1000000000000000",
+        "attempt": 1,
+        "criteria": [
+          {
+            "kind": "github_release",
+            "requirement": "The prettier/prettier 3.6.2 release notes announce a new native PDF export feature.",
+            "source": "prettier/prettier"
+          }
+        ],
+        "deadline": 1791316347,
+        "evidence": [
+          {
+            "kind": "github_release",
+            "sha": "7a8b05f41574633fd3af5298f3eeaf33567ad3d3",
+            "tag": "3.6.2",
+            "url": "https://github.com/prettier/prettier/releases/tag/3.6.2"
+          }
+        ],
+        "evidence_hash": "9aa686a06d1e9b0c61dfb7df73037f5caf7d76540fd488fbcf9a2b858f7b67be",
+        "history": [],
+        "judgments": [
+          {
+            "availability": "available",
+            "finalized": true,
+            "quote": "## What's Changed\r\n* Add missing blank line around code block by @fisker in https://github.com/prettier/prettier/pull/17675",
+            "reason": "The release notes excerpt lists only a blank-line fix and does not announce any new native PDF export feature.",
+            "sha": "7a8b05f41574633fd3af5298f3eeaf33567ad3d3",
+            "timestamp": 1750992719,
+            "verdict": "NOT_MET"
+          }
+        ],
+        "refunded": "0",
+        "released": "0",
+        "settled_at": 1791230709,
+        "spec_checks": [
+          {
+            "accepted": true,
+            "finalized": true,
+            "reason": "The criterion specifies a valid artifact source (GitHub release), a concrete version (3.6.2), and an observable property (release notes mentioning a specific feature)."
+          }
+        ],
+        "status": "NOT_MET",
+        "submitted_at": 1791230548,
+        "title": "Ship native PDF export"
+      },
+      {
+        "allocation": "1000000000000000",
+        "attempt": 1,
+        "criteria": [
+          {
+            "kind": "github_release",
+            "requirement": "The prettier/prettier release 0.0.0-tranche-missing-release exists and its release notes announce a formatting fix.",
+            "source": "prettier/prettier"
+          }
+        ],
+        "deadline": 1791316347,
+        "evidence": [
+          {
+            "kind": "github_release",
+            "sha": "0000000000000000000000000000000000000000",
+            "tag": "0.0.0-tranche-missing-release",
+            "url": "https://github.com/prettier/prettier/releases/tag/0.0.0-tranche-missing-release"
+          }
+        ],
+        "evidence_hash": "fa98c18bdf3dc7906c6dc899b64ecf8c9e63ba79d3847e2115d282ee22d2e38c",
+        "history": [],
+        "judgments": [
+          {
+            "availability": "unavailable",
+            "finalized": true,
+            "quote": "",
+            "reason": "The public artifact could not be verified at the supplied reference.",
+            "sha": "0000000000000000000000000000000000000000",
+            "timestamp": null,
+            "verdict": "INSUFFICIENT_EVIDENCE"
+          }
+        ],
+        "refunded": "0",
+        "released": "0",
+        "settled_at": 1791230872,
+        "spec_checks": [
+          {
+            "accepted": true,
+            "finalized": true,
+            "reason": "Names a valid public artifact source (GitHub release in prettier/prettier) and a concrete observable property: that the specified release exists and its release notes announce a formatting fix."
+          }
+        ],
+        "status": "INSUFFICIENT_EVIDENCE",
+        "submitted_at": 1791230757,
+        "title": "Publish the next release"
+      }
+    ],
+    "refunded": "0",
+    "released": "1000000000000000",
+    "spec": {
+      "budget": "3000000000000000",
+      "milestones": [
+        {
+          "allocation": "1000000000000000",
+          "criteria": [
+            {
+              "kind": "github_release",
+              "requirement": "The prettier/prettier 3.6.2 release notes announce a fix adding a missing blank line around a code block.",
+              "source": "prettier/prettier"
+            }
+          ],
+          "deadline": 1791316347,
+          "title": "Ship the formatting fix"
+        },
+        {
+          "allocation": "1000000000000000",
+          "criteria": [
+            {
+              "kind": "github_release",
+              "requirement": "The prettier/prettier 3.6.2 release notes announce a new native PDF export feature.",
+              "source": "prettier/prettier"
+            }
+          ],
+          "deadline": 1791316347,
+          "title": "Ship native PDF export"
+        },
+        {
+          "allocation": "1000000000000000",
+          "criteria": [
+            {
+              "kind": "github_release",
+              "requirement": "The prettier/prettier release 0.0.0-tranche-missing-release exists and its release notes announce a formatting fix.",
+              "source": "prettier/prettier"
+            }
+          ],
+          "deadline": 1791316347,
+          "title": "Publish the next release"
+        }
+      ],
+      "recipient": "0xdb433ff614bdd1ece21aa97221c3e0a7ecf79c92",
+      "title": "Public release verification"
+    },
+    "spec_hash": "301879cf6fc8c223268e9307945736a3ad3b9c63b78a4ec7aa9f63d343497cd8",
+    "status": "OPEN"
+  },
+  "outcomes": {
+    "MET": {
+      "milestone": 0,
+      "transaction": "0x86ffcad82c630107428c0b51f49bf973879cb945d8ae81833e8f855d2a40199e",
+      "callback": "0xc611680ab900d7cb259e55233cb74ad1c7ee03c3d3a9505ed3353388974a5094"
+    },
+    "NOT_MET": {
+      "milestone": 1,
+      "transaction": "0x5aeeeedf05cbdaa67cf4e764d329d4cdfcb68a88e186e0ebeae0d1b0215c323d",
+      "callback": "0x494695c970ad8adc4b8d5e5364245909c64bae0843e590911096c18f90eb4f62"
+    },
+    "INSUFFICIENT_EVIDENCE": {
+      "milestone": 2,
+      "transaction": "0x7e9f965c48c5d8bd06a1d5a43ee9944f737b63efcffda739f773f0ac0ba3295b",
+      "callback": "0x173e7e6d57918b450b326c91965f9eb8c00d85337ec840a80c20c367b2f9e55c"
+    }
+  },
+  "recordedAt": "2026-10-05T20:08:27.839Z",
+  "sourceSha256": "9044fabe3e856ecfb98d8ab4ec168153f56e30cec29df84d7112bc2e870a0f01",
+  "creditedTransfers": [
+    {
+      "hash": "0xa86f2853a164dca36f132e0b017730147589b7994d3f6012769799b7caf4a92c",
+      "from": "0xC592951bd17f7c36CC196E4AE36E45df412dbA2a",
+      "to": "0xdB433ff614bDD1ecE21Aa97221C3E0a7ecf79c92",
+      "amount": "1000000000000000"
+    }
+  ],
+  "flowGrantId": "expiry-and-resubmission",
+  "flowSpec": {
+    "title": "Expiry and resubmission proof",
+    "recipient": "0xdb433ff614bdd1ece21aa97221c3e0a7ecf79c92",
+    "budget": "1000000000000000",
+    "milestones": [
+      {
+        "title": "Missing release retry",
+        "allocation": "1000000000000000",
+        "deadline": 1791231866,
+        "criteria": [
+          {
+            "kind": "github_release",
+            "source": "prettier/prettier",
+            "requirement": "The prettier/prettier release 0.0.0-tranche-missing-release exists and its release notes announce a formatting fix."
+          }
+        ]
+      }
+    ]
+  }
+}

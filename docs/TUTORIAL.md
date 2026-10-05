@@ -1,0 +1,37 @@
+# Build an evidence-bound milestone escrow with GenLayer
+
+Tranche demonstrates where an intelligent contract adds a useful consensus boundary. Holding money and checking allocations are deterministic tasks. Reading release notes and deciding whether they show that a promised feature shipped is a semantic task. The project keeps these responsibilities separate. Validators answer a narrow evidence question; contract code computes every amount and applies every role and deadline check.
+
+## Start with a frozen agreement
+
+The public `propose` method in `contracts/tranche.py` accepts a grant ID and a JSON specification. It validates a nonzero recipient address, a positive integer-wei budget, one to three milestones and one to five criteria per milestone. All allocations must sum exactly to the budget. A deadline must be at least five minutes ahead and no more than a year ahead. Each criterion specifies an artifact kind, a source such as `prettier/prettier`, and a concrete requirement. The contract strips unrecognized specification fields by constructing a canonical representation, then hashes that representation with SHA-256. Stored state is a `TreeMap[str, str]` of serialized records and a `DynArray[str]` index. Python lists and dictionaries are local working values, not storage fields.
+
+The frontend's `lib/domain.ts` implements input validation and exact decimal GEN conversion using `bigint`. Browser checks improve usability but do not replace the contract's enforcement. The recipient address, allocations and criteria become immutable at proposal. Revising a rejected specification means creating another grant ID; there is no administrative editing method.
+
+## Validate one criterion at a time
+
+The `check_spec` method uses `validate_criterion` for one criterion, rather than asking for a holistic evaluation of an entire grant. The leader gets a fixed JSON schema with `accepted` and `reason`. A validator independently runs the same task and compares the accepted decision. Malformed model output causes disagreement, rather than silently approving the grant. The specification check asks about observability only, not whether the requested work exists. Release-note content is explicitly accepted as an observable property, because the first live run showed that an otherwise honest content criterion could be rejected by an overly strict interpretation.
+
+A successful consensus decision first stores a pending check. `finalize_spec` can only be called by the contract itself through a message emitted with `on='finalized'`. Only when all checks have passed their native appeal windows does the grant become `SPEC_ACCEPTED` or `SPEC_REJECTED`. The original funder then calls the payable `fund` method with exactly the frozen budget. A finalized funding callback changes the grant to `OPEN`. This extra stage prevents an accepted but appealable transaction from opening claims prematurely.
+
+## Bind evidence before asking the model
+
+The `claim` method belongs exclusively to the named recipient. It accepts one reference per criterion before that milestone's deadline. `validate_reference` binds each reference to its frozen artifact type and source. GitHub references require a full lowercase 40-character SHA and an exact allowlisted URL. npm references name an exact version. Archive references name a 14-digit capture and the exact `id_` snapshot. A claim increments the attempt counter and stores an evidence hash. The second claim preserves the first claim's judgments in history; a third claim is rejected. Another self-only finalized callback moves the claim into `JUDGING`.
+
+`fetch_evidence` runs separately for the leader and each validator. For GitHub releases, it resolves the tag to a commit and checks the supplied SHA, then fetches the release body and `created_at`. It never uses commit dates as historical deadline evidence. Files come from raw.githubusercontent.com at the pinned commit. npm metadata supplies the version publication time. Archive evidence checks a CDX row with both the exact timestamp and original URL before reading the snapshot. For a StudioNet contract, the public RPC schema supplies inspectable deployed methods. An explorer HTML shell alone cannot prove a contract's content.
+
+## Make consensus cover the supporting passage
+
+The semantic `assess` function receives only one frozen criterion and the bounded fetched document. Its prompt treats both criterion text and evidence as untrusted data and explicitly ignores embedded instructions. The output schema contains `verdict`, `quote` and `reason`. A quote must be a contiguous passage of 8–600 characters that actually appears in the fetched document. The verdict is restricted to `MET`, `NOT_MET` and `INSUFFICIENT_EVIDENCE`. Unavailable evidence bypasses the model and deterministically holds funds with insufficient evidence; a publication timestamp after the deadline deterministically yields not met.
+
+The validator fetches independently, assesses independently, compares the semantic verdict, checks the SHA and timestamp, and confirms that the leader's passage occurs in its own document. It does not require identical explanation wording or identical quote selection. This allows natural language variation while verifying the substantive decision and its factual support. `agree_judgment` and captured-validator direct tests reject a leader that supplies the right enum but a fabricated quotation.
+
+## Settle only after finality
+
+The finality callback derives the milestone result in code. All criteria met schedules the exact fixed allocation to the recipient. Any not-met result holds the allocation. Otherwise the result is insufficient evidence and also holds. Native transfers use an EVM recipient interface and have separate child receipts; a successful parent judgment alone does not prove credit. Duplicate, stale or post-refund callbacks cannot release again. `refund` becomes permissionless after the final milestone deadline. An on-time pending claim receives a bounded one-hour adjudication grace period so expiry does not immediately preempt consensus.
+
+## Build an honest client and verify the deployment
+
+`components/session.tsx` persists the operation, current step, submitted hash and descendant queue in local storage. It follows the parent, finalized callbacks and native-transfer descendants. A reload resumes reads automatically and requires an explicit action before another signature. Five-second polling and thirty-second grant reads limit RPC load. `receiptState` checks both lifecycle and execution, including rollback payloads. Read-only API routes expose finalized records and bounded previews, never server signing keys. The preview is clearly labeled non-authoritative.
+
+For development, install the pinned JavaScript dependencies, create separate Python environments for direct tests and `genlayer-py==0.18.0`, and run the commands in the README. `scripts/prepare-release.py` prepares an unsigned transaction with explicit fees using the pinned Python SDK. The unlocked CLI account signs it; the Python process receives only a public address and arguments. The deployment script records hashes before waiting, making reruns resumable. Retained receipts, the source hash and finalized state belong in `deploy/proof.json`. Finally, run `npm run verify:proof` to re-read the actual transactions and grant without sending any writes. Never describe a mocked test or an accepted transaction as proof that money reached its recipient.

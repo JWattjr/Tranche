@@ -1,0 +1,11 @@
+.venv
+.release-venv
+.genvm-cache
+.git
+.pytest_cache
+artifacts
+__pycache__
+.impeccable
+tests
+contracts
+docs/screenshots

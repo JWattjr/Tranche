@@ -1,0 +1,13 @@
+{
+  "name": "tranche", "version": "0.1.0", "private": true, "type": "module",
+  "scripts": {
+    "dev": "next dev --port 3200", "build": "next build", "start": "next start --port 3200",
+    "typecheck": "tsc --noEmit", "lint": "eslint .", "test": "tsx --test tests/*.test.ts",
+    "test:contract": "node scripts/python.mjs -m pytest tests/direct -v",
+    "lint:contract": "node scripts/python.mjs -m genvm_linter.cli check contracts/tranche.py",
+    "deploy:contract": "powershell -ExecutionPolicy Bypass -File scripts/deploy.ps1",
+    "verify:proof": "tsx scripts/verify-proof.ts"
+  },
+  "dependencies": {"next":"16.3.8","react":"19.2.0","react-dom":"19.2.0","genlayer-js":"1.1.8","lucide-react":"0.548.0","@fontsource/manrope":"5.2.8","@fontsource/libre-baskerville":"5.2.7"},
+  "devDependencies": {"typescript":"5.9.3","@types/node":"24.9.1","@types/react":"19.2.2","@types/react-dom":"19.2.2","tsx":"4.20.6","eslint":"9.38.0","eslint-config-next":"16.3.8"}
+}

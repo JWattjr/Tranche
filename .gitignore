@@ -1,0 +1,19 @@
+node_modules/
+.next/
+.vercel/
+.venv/
+.release-venv/
+.genvm-cache/
+.pytest_cache/
+__pycache__/
+*.pyc
+# Vercel-generated credentials remain local.
+.env*
+!.env.example
+*.tsbuildinfo
+artifacts/
+deploy/*.compiled.js
+.impeccable/cache/
+.impeccable/config.local.json
+.impeccable/build/
+

@@ -1,0 +1,38 @@
+{
+  "hash": "0xa86f2853a164dca36f132e0b017730147589b7994d3f6012769799b7caf4a92c",
+  "from_address": "0xC592951bd17f7c36CC196E4AE36E45df412dbA2a",
+  "to_address": "0xdB433ff614bDD1ecE21Aa97221C3E0a7ecf79c92",
+  "value": "1000000000000000",
+  "status": 7,
+  "result": 5,
+  "consensus_data": null,
+  "gaslimit": 6,
+  "nonce": 6,
+  "created_at": "2026-10-05T20:02:15.648828+00:00",
+  "leader_only": false,
+  "execution_mode": "NORMAL",
+  "origin_address": "0xC592951bd17f7c36CC196E4AE36E45df412dbA2a",
+  "triggered_on": "finalized",
+  "appeal_validators_timeout": false,
+  "sim_config": {
+    "genvm_datetime": null
+  },
+  "value_credited": true,
+  "sender": "0xC592951bd17f7c36CC196E4AE36E45df412dbA2a",
+  "recipient": "0xdB433ff614bDD1ecE21Aa97221C3E0a7ecf79c92",
+  "tx_id": "0xa86f2853a164dca36f132e0b017730147589b7994d3f6012769799b7caf4a92c",
+  "activator": "",
+  "last_leader": "",
+  "result_name": "NO_MAJORITY",
+  "num_of_rounds": "0",
+  "last_round": {
+    "round": "0",
+    "leader_index": "0",
+    "votes_committed": "0",
+    "votes_revealed": "0",
+    "appeal_bond": "0",
+    "rotations_left": "0",
+    "result": 5
+  },
+  "status_name": "FINALIZED"
+}
