@@ -27,4 +27,6 @@ await new Promise(resolve=>setTimeout(resolve,4000));
 const onChainCode=await client.getContractCode(proof.contract);
 if(createHash('sha256').update(onChainCode).digest('hex')!==localHash)throw Error('Deployed contract source differs from the local contract.');
 if(proof.flowGrantId){await new Promise(resolve=>setTimeout(resolve,4000));const flow=await readGrant(proof.contract,proof.flowGrantId);if(flow.status!=='CLOSED'||flow.held!=='0'||flow.refunded!=='1000000000000000')throw Error('Live resubmission/refund flow proof no longer matches.');}
+const browser=(proof as unknown as {browser?:{grantId:string;record:{spec_hash:string}}}).browser;
+if(browser){await new Promise(resolve=>setTimeout(resolve,4000));const grant=await readGrant(proof.contract,browser.grantId);if(grant.spec_hash!==browser.record.spec_hash||grant.status!=='SPEC_ACCEPTED'||grant.funded!=='0')throw Error('Unfunded browser specification proof differs from live state.');}
 console.log(JSON.stringify({verifiedTransactions:verified,outcomes:expected,specificationHash:record.spec_hash,sourceSha256:localHash,heldWei:record.held,releasedWei:record.released,simulated:true},null,2));

@@ -1,0 +1,11 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+const p=JSON.parse(readFileSync('deploy/proof.json','utf8'));
+p.sourceCommit=execFileSync('git',['-c','safe.directory='+process.cwd(),'rev-parse','HEAD'],{encoding:'utf8'}).trim();
+p.website='https://tranche-genlayer.vercel.app';
+p.github='https://github.com/JWattjr/Tranche';
+p.submissionReady=false;
+p.remainingBrowserChecks=p.browser?.remaining??['Complete funded browser flow with owner wallet approval'];
+const text=JSON.stringify(p,null,2)+'\n';
+writeFileSync('deploy/proof.json',text);writeFileSync('public/proof.json',text);
+console.log('SOURCE_COMMIT',p.sourceCommit);

@@ -45,7 +45,11 @@
     "flow-claim-2-child-0": "0xdcf59eca0c1e3bc4c7deb8c8f71b8e81795318a56d7653b063ad72fe331e74bd",
     "flow-judge-2": "0x77d6524f3f2a07dbe24b37c80e609247bfbd6e25fff275427e11b8095d9e789a",
     "flow-judge-2-child-0": "0xd23ee4e7071b371733ca3192a9ad3164ecf4d67932dae0a6875c72869465a261",
-    "flow-refund": "0x3d719e87dd618f24f94cc1227ddb6dc77c79292de92fb1bf79ccc163f4a72280"
+    "flow-refund": "0x3d719e87dd618f24f94cc1227ddb6dc77c79292de92fb1bf79ccc163f4a72280",
+    "flow-refund-child-0": "0x65b454113f10dbd437bc3be5f582b69ac90c70f1ca2e32b9d0067e4247632da6",
+    "browser-propose": "0x0c8b0c6412b22029fe6e40133a8c9961e00bf76207168c51f6735eaafa0c7888",
+    "browser-spec": "0x603d06f9194be03ef89b1e5b56be81b88296c29d4bfc95017f86803747e89fab",
+    "browser-spec-child-0": "0x15a6e5c035699b940ca136ce3d327b874018693494277bafc4b4f1457298f3e1"
   },
   "probes": {
     "https://api.github.com/repos/prettier/prettier/releases/tags/3.6.2": {
@@ -336,6 +340,12 @@
       "from": "0xC592951bd17f7c36CC196E4AE36E45df412dbA2a",
       "to": "0xdB433ff614bDD1ecE21Aa97221C3E0a7ecf79c92",
       "amount": "1000000000000000"
+    },
+    {
+      "hash": "0x65b454113f10dbd437bc3be5f582b69ac90c70f1ca2e32b9d0067e4247632da6",
+      "from": "0xC592951bd17f7c36CC196E4AE36E45df412dbA2a",
+      "to": "0xdB433ff614bDD1ecE21Aa97221C3E0a7ecf79c92",
+      "amount": "1000000000000000"
     }
   ],
   "flowGrantId": "expiry-and-resubmission",
@@ -359,11 +369,11 @@
     ]
   },
   "flowRecord": {
-    "contract_balance": "3000000000000000",
+    "contract_balance": "2000000000000000",
     "created_at": 1791230976,
     "funded": "1000000000000000",
     "funder": "0xdb433ff614bdd1ece21aa97221c3e0a7ecf79c92",
-    "held": "1000000000000000",
+    "held": "0",
     "id": "expiry-and-resubmission",
     "milestones": [
       {
@@ -422,7 +432,7 @@
             "verdict": "INSUFFICIENT_EVIDENCE"
           }
         ],
-        "refunded": "0",
+        "refunded": "1000000000000000",
         "released": "0",
         "settled_at": 1791231556,
         "spec_checks": [
@@ -432,12 +442,12 @@
             "reason": "The criterion names a concrete public artifact (GitHub release '0.0.0-tranche-missing-release' in prettier/prettier) and specifies a concrete observable property (release notes announce a formatting fix), which a reviewer can directly verify by reading the release notes. The requirement is not subjective and does not instruct the judge."
           }
         ],
-        "status": "INSUFFICIENT_EVIDENCE",
+        "status": "REFUNDED",
         "submitted_at": 1791231440,
         "title": "Missing release retry"
       }
     ],
-    "refunded": "0",
+    "refunded": "1000000000000000",
     "released": "0",
     "spec": {
       "budget": "1000000000000000",
@@ -459,6 +469,82 @@
       "title": "Expiry and resubmission proof"
     },
     "spec_hash": "2612f91bcad1ce1303236ef2f0c90dda1818df5bb36aa6e745eee2c3ff8e9014",
-    "status": "OPEN"
+    "status": "CLOSED"
+  },
+  "browser": {
+    "grantId": "grant-44cd64b1-58f8-479a",
+    "record": {
+      "contract_balance": "2000000000000000",
+      "created_at": 1791231587,
+      "funded": "0",
+      "funder": "0x1ee3b827907429e5df3db7282446b6e065ff6199",
+      "held": "0",
+      "id": "grant-44cd64b1-58f8-479a",
+      "milestones": [
+        {
+          "allocation": "1000000000000000",
+          "attempt": 0,
+          "criteria": [
+            {
+              "kind": "github_release",
+              "requirement": "The prettier/prettier 3.6.2 release notes announce a fix adding a missing blank line around a code block.",
+              "source": "prettier/prettier"
+            }
+          ],
+          "deadline": 1791836220,
+          "evidence": [],
+          "history": [],
+          "judgments": [],
+          "refunded": "0",
+          "released": "0",
+          "spec_checks": [
+            {
+              "accepted": true,
+              "finalized": true,
+              "reason": "The criterion specifies a valid artifact type (GitHub release), a concrete source, and an observable property (specific text in the release notes)."
+            }
+          ],
+          "status": "UNFUNDED",
+          "title": "Verify the release notes"
+        }
+      ],
+      "refunded": "0",
+      "released": "0",
+      "spec": {
+        "budget": "1000000000000000",
+        "milestones": [
+          {
+            "allocation": "1000000000000000",
+            "criteria": [
+              {
+                "kind": "github_release",
+                "requirement": "The prettier/prettier 3.6.2 release notes announce a fix adding a missing blank line around a code block.",
+                "source": "prettier/prettier"
+              }
+            ],
+            "deadline": 1791836220,
+            "title": "Verify the release notes"
+          }
+        ],
+        "recipient": "0xdb433ff614bdd1ece21aa97221c3e0a7ecf79c92",
+        "title": "Browser finality verification"
+      },
+      "spec_hash": "7b6744fb513b58353ad7d66114e741a782e15ae7e6aaa50406c5580673492391",
+      "status": "SPEC_ACCEPTED"
+    },
+    "observed": [
+      "Chrome proposal signing",
+      "criterion check signing",
+      "accepted appeal state",
+      "reload resumes existing hashes",
+      "finalized success and fresh accepted specification"
+    ],
+    "remaining": [
+      "production wallet connection approval",
+      "browser funding",
+      "recipient claim signing",
+      "browser payout and refund"
+    ],
+    "productionConnection": "User rejected the request"
   }
 }

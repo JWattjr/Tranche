@@ -16,6 +16,8 @@ The grant `prettier-release-grant` has a 0.003 GEN budget and three fixed 0.001 
 
 The separate [native transfer receipt](https://explorer-studio.genlayer.com/transactions/0xa86f2853a164dca36f132e0b017730147589b7994d3f6012769799b7caf4a92c) reports FINALIZED, `value_credited=true`, the exact contract sender, recipient wallet and 1,000,000,000,000,000 wei. A native credit can have no consensus receipt; the verifier checks the transfer fields instead of pretending it is an intelligent-contract execution.
 
+The separate `expiry-and-resubmission` grant finalized two insufficient-evidence claims and retains the first claim's history. After its actual deadline, [refund 0x3d719e87…](https://explorer-studio.genlayer.com/transactions/0x3d719e87dd618f24f94cc1227ddb6dc77c79292de92fb1bf79ccc163f4a72280) finalized successfully. Its state is CLOSED, refunded 0.001 GEN, held zero. The native refund credit is retained separately in the proof manifest.
+
 The access-probe contract finalized real validator fetches of GitHub API, raw.githubusercontent.com, registry.npmjs.org and archive.org CDX, each returning HTTP 200. Those receipts are retained in `deploy/receipts` and indexed in `deploy/proof.json`.
 
 The first specification prompt falsely rejected the observable PDF-announcement criterion. Its rejected attempt is retained separately in `deploy/attempts/spec-rejected-proof.json`. The prompt was corrected, the contract redeployed, and the MET case rerun live on the new address. No recorded verdict was overridden. The initial failed payable call exposed a simulator limitation: a native balance may be credited despite execution rollback. Only successful finalization plus grant accounting authorizes funding in the app.
@@ -34,7 +36,9 @@ The actual Next.js app was checked in the Codex in-app browser at 1440×1000 and
 
 Create form checks exercised exact allocation imbalance/balance, allowlist selection, adding/removing milestones and criteria, and required input validation. The claim/resubmission form fetched real GitHub evidence, displayed matching SHA, release `created_at` and notes, and identified the preview as non-authoritative. Public browsing and evidence previews require no wallet. Missing MetaMask produces an actionable message. The execution-proof page exposes actual receipt links and a proof download.
 
-The in-app browser has no MetaMask extension. Browser wallet signatures, a reload during a signed pending operation, and a user-driven funding/settlement pass are therefore **not verified**. The live contract execution uses real CLI signatures; it does not substitute for this remaining browser pass. Direct-mode state tests do not prove those browser interactions.
+The in-app browser has no MetaMask extension. A further Chrome test submitted a real proposal [0x0c8b0c64…](https://explorer-studio.genlayer.com/transactions/0x0c8b0c6412b22029fe6e40133a8c9961e00bf76207168c51f6735eaafa0c7888) and criterion check [0x603d06f9…](https://explorer-studio.genlayer.com/transactions/0x603d06f9194be03ef89b1e5b56be81b88296c29d4bfc95017f86803747e89fab). It displayed the accepted/native-appeal state, resumed tracking the retained hashes after a reload, and completed as SPEC_ACCEPTED. This local browser grant remains unfunded.
+
+The production browser test was prepared with a 0.001 GEN budget, but its wallet connection request was declined. The browser safety policy prohibits accessing `chrome-extension:` wallet approval pages, so the owner must handle connection/signature approval directly. Browser funding, recipient claims, payout tracking and refund signing are therefore **not verified end to end**. The live CLI execution proves the contract flow and does not substitute for those remaining browser checks. No test wallet or fake receipt was injected.
 
 ## Recheck
 
