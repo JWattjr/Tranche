@@ -1,6 +1,6 @@
 # Tranche verification
 
-This record separates live StudioNet execution, deterministic tests and browser observations. StudioNet GEN is simulated. The project is not marked submission-ready while the browser wallet-signing/reload pass remains unverified.
+This record separates live StudioNet execution, deterministic tests and browser observations. StudioNet GEN is simulated. The project is not marked submission-ready while browser funding, claim and settlement signing remain unverified.
 
 ## Live network evidence
 
@@ -41,5 +41,11 @@ The in-app browser has no MetaMask extension. A further Chrome test submitted a 
 The production browser test was prepared with a 0.001 GEN budget, but its wallet connection request was declined. The browser safety policy prohibits accessing `chrome-extension:` wallet approval pages, so the owner must handle connection/signature approval directly. Browser funding, recipient claims, payout tracking and refund signing are therefore **not verified end to end**. The live CLI execution proves the contract flow and does not substitute for those remaining browser checks. No test wallet or fake receipt was injected.
 
 ## Recheck
+
+On 6 October 2026, `npm run verify:proof` passed against the public StudioNet RPC: 46 finalized transactions, all three expected verdicts, frozen specification hash `301879cf6fc8c223268e9307945736a3ad3b9c63b78a4ec7aa9f63d343497cd8`, and deployed source SHA-256 `9044fabe3e856ecfb98d8ab4ec168153f56e30cec29df84d7112bc2e870a0f01`. The grant held 2,000,000,000,000,000 wei and released 1,000,000,000,000,000 wei. The verifier also confirmed the separate refund and browser proposal/specification records.
+
+Typecheck and ESLint passed again on that date. Vercel completed a remote production build for deployment `dpl_DysXvDDxCgL23un2qsiYjJEmZtVv`, aliased to https://tranche-genlayer.vercel.app. The hosted ledger's finalized live read and layout were checked again at 1440×1000 and 390×844, with no horizontal overflow; captures are retained in `.impeccable/review/hosted-desktop.png` and `hosted-mobile.png`.
+
+The hosted 0.001 simulated GEN browser payout agreement is prepared in Chrome. Its connection request is pending owner handling in the wallet extension. No funding or claim is represented as completed by that prepared form.
 
 Run `npm run verify:proof` with public RPC access. It is read-only, spaces requests below the published per-minute limit, checks finalized execution and descendants, reads the three verdicts and frozen hash, and compares deployed source with the retained source hash. It also checks the live expiry/resubmission grant once its refund is recorded. Do not replace an RPC error or divergent outcome with a mocked success.

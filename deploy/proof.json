@@ -546,5 +546,14 @@
       "browser payout and refund"
     ],
     "productionConnection": "User rejected the request"
-  }
+  },
+  "sourceCommit": "837be1b9ba756e743c8db3cc23007e7eaeed4cb6",
+  "website": "https://tranche-genlayer.vercel.app",
+  "github": "https://github.com/JWattjr/Tranche",
+  "remainingBrowserChecks": [
+    "production wallet connection approval",
+    "browser funding",
+    "recipient claim signing",
+    "browser payout and refund"
+  ]
 }
