@@ -39,11 +39,24 @@ if(createHash('sha256').update(onChainCode).digest('hex')!==localHash)throw Erro
 if(proof.flowGrantId){await new Promise(resolve=>setTimeout(resolve,4000));const flow=await rpc(()=>readGrant(proof.contract!,proof.flowGrantId!));if(flow.status!=='CLOSED'||flow.held!=='0'||flow.refunded!=='1000000000000000')throw Error('Live resubmission/refund flow proof no longer matches.');}
 const browser=(proof as unknown as {browser?:{grantId:string;record:{spec_hash:string}}}).browser;
 if(browser){await new Promise(resolve=>setTimeout(resolve,4000));const grant=await rpc(()=>readGrant(proof.contract!,browser.grantId));if(grant.spec_hash!==browser.record.spec_hash||grant.status!=='SPEC_ACCEPTED'||grant.funded!=='0')throw Error('Unfunded browser specification proof differs from live state.');}
-const productionBrowser=(proof as unknown as {productionBrowser?:{grantId:string;record:Grant;completed:boolean}}).productionBrowser;
+const productionBrowser=(proof as unknown as {productionBrowser?:{grantId:string;record:Grant;completed:boolean;refundedAfterExpiredClaim?:boolean;expiredClaim?:{hash:TransactionHash}}}).productionBrowser;
 if(productionBrowser){
   await new Promise(resolve=>setTimeout(resolve,4000));
   const grant=await rpc(()=>readGrant(proof.contract!,productionBrowser.grantId));
   if(grant.spec_hash!==productionBrowser.record.spec_hash)throw Error('Production browser agreement hash changed.');
+  if(productionBrowser.refundedAfterExpiredClaim&&(grant.status!=='CLOSED'||grant.funded!=='1000000000000000'||grant.refunded!==grant.funded||grant.released!=='0'||grant.held!=='0'||grant.milestones[1].attempt!==2||grant.milestones[1].history.length!==1||grant.milestones[1].judgments[0]?.verdict!=='INSUFFICIENT_EVIDENCE'||!grant.milestones[1].judgments[0]?.finalized))throw Error('Expired browser grant refund or retry differs from the retained proof.');
+  if(productionBrowser.expiredClaim){
+    await new Promise(resolve=>setTimeout(resolve,4000));
+    const failed=await rpc(()=>client.getTransaction({hash:productionBrowser.expiredClaim!.hash}));
+    if(receiptState(failed as unknown as Record<string,unknown>).phase!=='finalized-error')throw Error('The retained late browser claim no longer matches its observed execution error.');
+  }
   if(productionBrowser.completed&&(grant.status!=='CLOSED'||grant.funded!=='1000000000000000'||grant.released!=='500000000000000'||grant.refunded!=='500000000000000'||grant.held!=='0'||grant.milestones[0].judgments[0]?.verdict!=='MET'||!grant.milestones[0].judgments[0]?.finalized||grant.milestones[1].attempt!==2||grant.milestones[1].history.length!==1||grant.milestones[1].judgments[0]?.verdict!=='INSUFFICIENT_EVIDENCE'||!grant.milestones[1].judgments[0]?.finalized))throw Error('Completed production browser settlement differs from the retained proof.');
+}
+const payoutBrowser=(proof as unknown as {productionPayoutBrowser?:{grantId:string;record:Grant;completed:boolean}}).productionPayoutBrowser;
+if(payoutBrowser){
+  await new Promise(resolve=>setTimeout(resolve,4000));
+  const grant=await rpc(()=>readGrant(proof.contract!,payoutBrowser.grantId));
+  if(grant.spec_hash!==payoutBrowser.record.spec_hash)throw Error('Production payout agreement hash changed.');
+  if(payoutBrowser.completed&&(grant.status!=='OPEN'||grant.milestones.length!==1||grant.funded!=='500000000000000'||grant.released!==grant.funded||grant.refunded!=='0'||grant.held!=='0'||grant.milestones[0].judgments[0]?.verdict!=='MET'||!grant.milestones[0].judgments[0]?.finalized))throw Error('Completed production browser payout differs from the retained proof.');
 }
 console.log(JSON.stringify({verifiedTransactions:verified,outcomes:expected,specificationHash:record.spec_hash,sourceSha256:localHash,heldWei:record.held,releasedWei:record.released,simulated:true},null,2));

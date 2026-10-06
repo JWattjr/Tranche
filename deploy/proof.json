@@ -54,7 +54,19 @@
     "production-browser-spec-0": "0x2fd350292506f41a59257cb8847165f2dc97542e3f95b59f61717859a3021955",
     "production-browser-spec-0-child-0": "0x2798f477d343e6019c2b4a01f436e0d4d4c06aa93017ea86ac37aab5ef1af560",
     "production-browser-spec-1": "0x0244dfb0d59763ea0a2ab739fed7cf87ca4d97f53438d8de51174b3d0cec4e14",
-    "production-browser-spec-1-child-0": "0x97da6968abf20fa151559e595f7617f50b6545af4003b9939e030f928651092c"
+    "production-browser-spec-1-child-0": "0x97da6968abf20fa151559e595f7617f50b6545af4003b9939e030f928651092c",
+    "production-browser-fund": "0x6db038efbf85303779e1ef4bf41a9296f613250fdcb9f17a96ea6ee78a4a6393",
+    "production-browser-fund-child-0": "0xdec3e84ae63a39e4ebf8ec42f8e74a16df4c6c84d1e3c4078f29c4a9709ecd29",
+    "production-browser-claim-1": "0xb6ec041ab8b5c0577d9901d3ba17c10ac368567800ea00f9947711d50fde6b52",
+    "production-browser-claim-1-child-0": "0xab8b8e579497a73c24d0036491f805340a18a0a7de31c9ac7025e2bac9ebcead",
+    "production-browser-judge-1": "0x14ad3e8e249f2e5d1463b7ade2a3a29d9ca2c885e79b015c03ecfdb9d8beff90",
+    "production-browser-judge-1-child-0": "0x9a0460064917c69e147f31ef1943453f1888dbbe20e57c9da052e7030a8a24a1",
+    "production-browser-resubmit-1": "0x5f97eb37f7c4ac6b0345b73d5ecd80e4978d67c46fccb0ee60479291fa69651c",
+    "production-browser-resubmit-1-child-0": "0xef23fe3de2174a4697fd68f9025155e1ec9cdbb5a5265fc41e00aaa1ed069843",
+    "production-browser-judge-resubmit-1": "0x3aa35de99df5aa312d7d899f6cebeba0a3afc26128a969b4e48174ff63d9ead0",
+    "production-browser-judge-resubmit-1-child-0": "0xccecd075228d7552b729bd62ff6a1f15903281a81fce2b376dd641cd1bf75018",
+    "production-browser-refund": "0x52b56dfe544bcd1546da59e51e0f69f5070b004ea94563d62b2dabff58c64cc2",
+    "production-browser-refund-child-0": "0xd8d9e119814cb45719b01f95aa5eb82080dca2b0e12da916a0b33aa23d0c123d"
   },
   "probes": {
     "https://api.github.com/repos/prettier/prettier/releases/tags/3.6.2": {
@@ -351,6 +363,12 @@
       "from": "0xC592951bd17f7c36CC196E4AE36E45df412dbA2a",
       "to": "0xdB433ff614bDD1ecE21Aa97221C3E0a7ecf79c92",
       "amount": "1000000000000000"
+    },
+    {
+      "hash": "0xd8d9e119814cb45719b01f95aa5eb82080dca2b0e12da916a0b33aa23d0c123d",
+      "from": "0xC592951bd17f7c36CC196E4AE36E45df412dbA2a",
+      "to": "0x1ee3b827907429e5df3db7282446b6e065ff6199",
+      "amount": "1000000000000000"
     }
   ],
   "flowGrantId": "expiry-and-resubmission",
@@ -545,9 +563,7 @@
       "finalized success and fresh accepted specification"
     ],
     "remaining": [
-      "browser funding",
-      "recipient claim signing",
-      "browser payout and refund"
+      "successful recipient payout claim and native credit in the production browser"
     ],
     "productionConnection": "Connected public account 0x1ee3b827907429e5df3db7282446b6e065ff6199 on 2026-10-06"
   },
@@ -555,16 +571,14 @@
   "website": "https://tranche-genlayer.vercel.app",
   "github": "https://github.com/JWattjr/Tranche",
   "remainingBrowserChecks": [
-    "browser funding",
-    "recipient claim signing",
-    "browser payout and refund"
+    "successful recipient payout claim and native credit in the production browser"
   ],
   "productionBrowser": {
     "grantId": "grant-e33fff42-4404-4fd7",
     "record": {
       "contract_balance": "2000000000000000",
       "created_at": 1791284343,
-      "funded": "0",
+      "funded": "1000000000000000",
       "funder": "0x1ee3b827907429e5df3db7282446b6e065ff6199",
       "held": "0",
       "id": "grant-e33fff42-4404-4fd7",
@@ -583,7 +597,7 @@
           "evidence": [],
           "history": [],
           "judgments": [],
-          "refunded": "0",
+          "refunded": "500000000000000",
           "released": "0",
           "spec_checks": [
             {
@@ -592,12 +606,12 @@
               "reason": "Valid observable requirement for GitHub release notes content. The criterion specifies a concrete artifact (prettier/prettier 3.6.2 release notes) and an observable property (announcement of a fix adding a missing blank line around a code block) that reviewers can verify by reading the release notes."
             }
           ],
-          "status": "UNFUNDED",
+          "status": "REFUNDED",
           "title": "Release the formatting fix"
         },
         {
           "allocation": "500000000000000",
-          "attempt": 0,
+          "attempt": 2,
           "criteria": [
             {
               "kind": "github_release",
@@ -606,11 +620,54 @@
             }
           ],
           "deadline": 1791287400,
-          "evidence": [],
-          "history": [],
-          "judgments": [],
-          "refunded": "0",
+          "evidence": [
+            {
+              "kind": "github_release",
+              "sha": "0000000000000000000000000000000000000000",
+              "tag": "0.0.0-tranche-missing-release",
+              "url": "https://github.com/prettier/prettier/releases/tag/0.0.0-tranche-missing-release"
+            }
+          ],
+          "evidence_hash": "fa98c18bdf3dc7906c6dc899b64ecf8c9e63ba79d3847e2115d282ee22d2e38c",
+          "history": [
+            {
+              "attempt": 1,
+              "evidence": [
+                {
+                  "kind": "github_release",
+                  "sha": "0000000000000000000000000000000000000000",
+                  "tag": "0.0.0-tranche-missing-release",
+                  "url": "https://github.com/prettier/prettier/releases/tag/0.0.0-tranche-missing-release"
+                }
+              ],
+              "judgments": [
+                {
+                  "availability": "unavailable",
+                  "finalized": true,
+                  "quote": "",
+                  "reason": "The public artifact could not be verified at the supplied reference.",
+                  "sha": "0000000000000000000000000000000000000000",
+                  "timestamp": null,
+                  "verdict": "INSUFFICIENT_EVIDENCE"
+                }
+              ],
+              "status": "INSUFFICIENT_EVIDENCE"
+            }
+          ],
+          "judgments": [
+            {
+              "availability": "unavailable",
+              "finalized": true,
+              "quote": "",
+              "reason": "The public artifact could not be verified at the supplied reference.",
+              "sha": "0000000000000000000000000000000000000000",
+              "timestamp": null,
+              "verdict": "INSUFFICIENT_EVIDENCE"
+            }
+          ],
+          "refunded": "500000000000000",
           "released": "0",
+          "settled_at": 1791287239,
           "spec_checks": [
             {
               "accepted": true,
@@ -618,11 +675,12 @@
               "reason": "The criterion identifies a public GitHub release and specifies a concrete observable property (announcement of a formatting fix in release notes)."
             }
           ],
-          "status": "UNFUNDED",
+          "status": "REFUNDED",
+          "submitted_at": 1791287095,
           "title": "Hold and retry missing release"
         }
       ],
-      "refunded": "0",
+      "refunded": "1000000000000000",
       "released": "0",
       "spec": {
         "budget": "1000000000000000",
@@ -656,9 +714,9 @@
         "title": "Browser settlement verification"
       },
       "spec_hash": "06428942583bc5dfc886227bc345ccc3cab9cf8d1a71fecf6a28b195ef07e734",
-      "status": "SPEC_ACCEPTED"
+      "status": "CLOSED"
     },
-    "recordedAt": "2026-10-06T11:11:55.948Z",
+    "recordedAt": "2026-10-06T11:54:58.304Z",
     "completed": false,
     "observed": [
       "Connected production wallet account",
@@ -666,7 +724,30 @@
       "Declined criterion signature resumed without another proposal",
       "Both criterion checks and callbacks finalized",
       "Hosted grant reload recovered operation",
-      "Fresh SPEC_ACCEPTED read at desktop and mobile widths"
-    ]
+      "Fresh SPEC_ACCEPTED read at desktop and mobile widths",
+      "Hosted funding finalized with 0.001 simulated GEN held",
+      "Recipient missing-release claim and judgment finalized as INSUFFICIENT_EVIDENCE",
+      "Single recipient resubmission and judgment finalized as INSUFFICIENT_EVIDENCE; history retained",
+      "Late genuine-release claim finalized with execution error; sequence stopped before judgment",
+      "Hosted refund finalized; CLOSED, refunded 0.001 simulated GEN, zero held",
+      "Refunded hosted grant checked at desktop and 390x844 mobile with no horizontal overflow"
+    ],
+    "refundedAfterExpiredClaim": true,
+    "expiredClaim": {
+      "hash": "0xd0d239053ee6efea9cd80a1d309df32be286e71d0cf2c0e3dd29228493526921",
+      "status": "FINALIZED",
+      "execution": "ERROR",
+      "createdAt": "2026-10-06T11:50:10.702637+00:00",
+      "receipt": "deploy/attempts/browser-expired-claim.json"
+    }
+  },
+  "verification": {
+    "checkedAt": "2026-10-06T12:07:42.094Z",
+    "successfulFinalizedReceipts": 63,
+    "expectedLateClaimErrorVerified": true,
+    "sourceSha256": "9044fabe3e856ecfb98d8ab4ec168153f56e30cec29df84d7112bc2e870a0f01",
+    "threeVerdictsVerified": true,
+    "exactNativeCreditsVerified": true,
+    "browserRefundAndRetryVerified": true
   }
 }
