@@ -1,7 +1,7 @@
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {readClient,readGrant,receiptState,nativeCredit} from '../lib/protocol';
-import type {Proof} from '../lib/domain';
+import type {Grant,Proof} from '../lib/domain';
 import type {TransactionHash} from 'genlayer-js/types';
 const proof=JSON.parse(readFileSync('deploy/proof.json','utf8')) as Proof&{sourceSha256?:string;creditedTransfers?:Array<{hash:string;from:string;to:string;amount:string}>;flowGrantId?:string;flowRecord?:{status:string;refunded:string;held:string};verification?:Record<string,unknown>};
 if(!proof.contract||!proof.grantId||!proof.outcomes)throw Error('Finalized demo proof is incomplete.');
@@ -29,4 +29,11 @@ if(createHash('sha256').update(onChainCode).digest('hex')!==localHash)throw Erro
 if(proof.flowGrantId){await new Promise(resolve=>setTimeout(resolve,4000));const flow=await readGrant(proof.contract,proof.flowGrantId);if(flow.status!=='CLOSED'||flow.held!=='0'||flow.refunded!=='1000000000000000')throw Error('Live resubmission/refund flow proof no longer matches.');}
 const browser=(proof as unknown as {browser?:{grantId:string;record:{spec_hash:string}}}).browser;
 if(browser){await new Promise(resolve=>setTimeout(resolve,4000));const grant=await readGrant(proof.contract,browser.grantId);if(grant.spec_hash!==browser.record.spec_hash||grant.status!=='SPEC_ACCEPTED'||grant.funded!=='0')throw Error('Unfunded browser specification proof differs from live state.');}
+const productionBrowser=(proof as unknown as {productionBrowser?:{grantId:string;record:Grant;completed:boolean}}).productionBrowser;
+if(productionBrowser){
+  await new Promise(resolve=>setTimeout(resolve,4000));
+  const grant=await readGrant(proof.contract,productionBrowser.grantId);
+  if(grant.spec_hash!==productionBrowser.record.spec_hash)throw Error('Production browser agreement hash changed.');
+  if(productionBrowser.completed&&(grant.status!=='CLOSED'||grant.funded!=='1000000000000000'||grant.released!=='500000000000000'||grant.refunded!=='500000000000000'||grant.held!=='0'||grant.milestones[0].judgments[0]?.verdict!=='MET'||!grant.milestones[0].judgments[0]?.finalized||grant.milestones[1].attempt!==2||grant.milestones[1].history.length!==1||grant.milestones[1].judgments[0]?.verdict!=='INSUFFICIENT_EVIDENCE'||!grant.milestones[1].judgments[0]?.finalized))throw Error('Completed production browser settlement differs from the retained proof.');
+}
 console.log(JSON.stringify({verifiedTransactions:verified,outcomes:expected,specificationHash:record.spec_hash,sourceSha256:localHash,heldWei:record.held,releasedWei:record.released,simulated:true},null,2));
