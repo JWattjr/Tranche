@@ -66,7 +66,17 @@
     "production-browser-judge-resubmit-1": "0x3aa35de99df5aa312d7d899f6cebeba0a3afc26128a969b4e48174ff63d9ead0",
     "production-browser-judge-resubmit-1-child-0": "0xccecd075228d7552b729bd62ff6a1f15903281a81fce2b376dd641cd1bf75018",
     "production-browser-refund": "0x52b56dfe544bcd1546da59e51e0f69f5070b004ea94563d62b2dabff58c64cc2",
-    "production-browser-refund-child-0": "0xd8d9e119814cb45719b01f95aa5eb82080dca2b0e12da916a0b33aa23d0c123d"
+    "production-browser-refund-child-0": "0xd8d9e119814cb45719b01f95aa5eb82080dca2b0e12da916a0b33aa23d0c123d",
+    "production-browser-payout-propose": "0xc421c0c8b3d16e3bc8bdeccbd7c4c4837f969eb7e5ef7a694eb9716e0bdad3cd",
+    "production-browser-payout-spec-0": "0x95b27b44cc772b4993333cc971e33914210e547bf8cf5f088aa72fa8cca0d4b8",
+    "production-browser-payout-spec-0-child-0": "0x27225bf82dce47747697cca1c39a3544cee7438ca5504d68365ae43376dbc9b5",
+    "production-browser-payout-fund": "0x6a0c3777c243d2f2d4bdc5d6ea3da581f8e3205bb107c50977d3e6177c7a9c04",
+    "production-browser-payout-fund-child-0": "0x6d2087345a2388346cc7381dc7837a1e7ee117d8b07a23307a740cbf4f8447d0",
+    "production-browser-payout-claim-0": "0x95f9a27c77515daefae8076767ccfe6957fdb135c77d9d23713439dd94a37fd8",
+    "production-browser-payout-claim-0-child-0": "0x3d26c9c6a752536bad3acbd5091cdacb30b7d4b5147830ad405391ee6a46a4f5",
+    "production-browser-payout-judge-0": "0x16c9eed197240f0a50c8fe3c7d4084d6f86943c1ae00979763248e65c9ec79a9",
+    "production-browser-payout-judge-0-child-0": "0x77a89d9aff7b67893bcb6ef1278e10fe794dd64ea1797923ba06c68d453349e0",
+    "production-browser-payout-judge-0-child-0-child-0": "0x4bd88d6507630d4397270d74162e6bc2c45422f329c1825debd010c51cd8013c"
   },
   "probes": {
     "https://api.github.com/repos/prettier/prettier/releases/tags/3.6.2": {
@@ -90,7 +100,7 @@
       "status": 200
     }
   },
-  "submissionReady": false,
+  "submissionReady": true,
   "probeContract": "0x373220D40aEceFb78191EE13C83da7142971E274",
   "grantId": "prettier-release-grant",
   "contract": "0xC592951bd17f7c36CC196E4AE36E45df412dbA2a",
@@ -369,6 +379,12 @@
       "from": "0xC592951bd17f7c36CC196E4AE36E45df412dbA2a",
       "to": "0x1ee3b827907429e5df3db7282446b6e065ff6199",
       "amount": "1000000000000000"
+    },
+    {
+      "hash": "0x4bd88d6507630d4397270d74162e6bc2c45422f329c1825debd010c51cd8013c",
+      "from": "0xC592951bd17f7c36CC196E4AE36E45df412dbA2a",
+      "to": "0x1ee3b827907429e5df3db7282446b6e065ff6199",
+      "amount": "500000000000000"
     }
   ],
   "flowGrantId": "expiry-and-resubmission",
@@ -562,17 +578,13 @@
       "reload resumes existing hashes",
       "finalized success and fresh accepted specification"
     ],
-    "remaining": [
-      "successful recipient payout claim and native credit in the production browser"
-    ],
+    "remaining": [],
     "productionConnection": "Connected public account 0x1ee3b827907429e5df3db7282446b6e065ff6199 on 2026-10-06"
   },
   "sourceCommit": "837be1b9ba756e743c8db3cc23007e7eaeed4cb6",
   "website": "https://tranche-genlayer.vercel.app",
   "github": "https://github.com/JWattjr/Tranche",
-  "remainingBrowserChecks": [
-    "successful recipient payout claim and native credit in the production browser"
-  ],
+  "remainingBrowserChecks": [],
   "productionBrowser": {
     "grantId": "grant-e33fff42-4404-4fd7",
     "record": {
@@ -742,12 +754,107 @@
     }
   },
   "verification": {
-    "checkedAt": "2026-10-06T12:07:42.094Z",
-    "successfulFinalizedReceipts": 63,
+    "checkedAt": "2026-10-06T16:41:28.237Z",
+    "successfulFinalizedReceipts": 73,
     "expectedLateClaimErrorVerified": true,
     "sourceSha256": "9044fabe3e856ecfb98d8ab4ec168153f56e30cec29df84d7112bc2e870a0f01",
     "threeVerdictsVerified": true,
     "exactNativeCreditsVerified": true,
-    "browserRefundAndRetryVerified": true
+    "browserRefundAndRetryVerified": true,
+    "browserPayoutVerified": true
+  },
+  "productionPayoutBrowser": {
+    "grantId": "grant-96c9c646-5b12-407c",
+    "record": {
+      "contract_balance": "2000000000000000",
+      "created_at": 1791289076,
+      "funded": "500000000000000",
+      "funder": "0x1ee3b827907429e5df3db7282446b6e065ff6199",
+      "held": "0",
+      "id": "grant-96c9c646-5b12-407c",
+      "milestones": [
+        {
+          "allocation": "500000000000000",
+          "attempt": 1,
+          "criteria": [
+            {
+              "kind": "github_release",
+              "requirement": "The prettier/prettier 3.6.2 release notes announce a fix adding a missing blank line around a code block.",
+              "source": "prettier/prettier"
+            }
+          ],
+          "deadline": 1791892560,
+          "evidence": [
+            {
+              "kind": "github_release",
+              "sha": "7a8b05f41574633fd3af5298f3eeaf33567ad3d3",
+              "tag": "3.6.2",
+              "url": "https://github.com/prettier/prettier/releases/tag/3.6.2"
+            }
+          ],
+          "evidence_hash": "9aa686a06d1e9b0c61dfb7df73037f5caf7d76540fd488fbcf9a2b858f7b67be",
+          "history": [],
+          "judgments": [
+            {
+              "availability": "available",
+              "finalized": true,
+              "quote": "* Add missing blank line around code block by @fisker in https://github.com/prettier/prettier/pull/17675",
+              "reason": "The release notes directly announce a fix that adds a missing blank line around a code block.",
+              "sha": "7a8b05f41574633fd3af5298f3eeaf33567ad3d3",
+              "timestamp": 1750992719,
+              "verdict": "MET"
+            }
+          ],
+          "refunded": "0",
+          "released": "500000000000000",
+          "settled_at": 1791295174,
+          "spec_checks": [
+            {
+              "accepted": true,
+              "finalized": true,
+              "reason": "The criterion names a concrete public artifact (the prettier/prettier GitHub release for version 3.6.2) and specifies a concrete observable property (the release notes announce a fix adding a missing blank line around a code block). A reviewer can navigate to the GitHub release page for prettier/prettier v3.6.2 and read the notes to verify whether that specific fix is announced. This is not subjective and contains no instructions to the judge."
+            }
+          ],
+          "status": "MET",
+          "submitted_at": 1791295039,
+          "title": "Release the verified formatting fix"
+        }
+      ],
+      "refunded": "0",
+      "released": "500000000000000",
+      "spec": {
+        "budget": "500000000000000",
+        "milestones": [
+          {
+            "allocation": "500000000000000",
+            "criteria": [
+              {
+                "kind": "github_release",
+                "requirement": "The prettier/prettier 3.6.2 release notes announce a fix adding a missing blank line around a code block.",
+                "source": "prettier/prettier"
+              }
+            ],
+            "deadline": 1791892560,
+            "title": "Release the verified formatting fix"
+          }
+        ],
+        "recipient": "0x1ee3b827907429e5df3db7282446b6e065ff6199",
+        "title": "Browser payout verification"
+      },
+      "spec_hash": "14be70c1e8cedde80e17acadbb8b1231a43c90c154b48d493ce8b3684bf6dc2f",
+      "status": "OPEN"
+    },
+    "recordedAt": "2026-10-06T16:32:01.566Z",
+    "completed": true,
+    "observed": [
+      "Production wallet connected as funder and recipient",
+      "Proposal and criterion check finalized; hosted SPEC_ACCEPTED state read back",
+      "Separate 0.0005 simulated GEN funding and callback finalized; hosted OPEN state with exact held allocation",
+      "Genuine Prettier 3.6.2 preview matched pinned SHA, publication timestamp and release-note property",
+      "Prepared claim checked at desktop and 390x844 mobile; no horizontal overflow",
+      "Owner-approved recipient claim, judgment and callbacks finalized as MET",
+      "Exact separate 0.0005 simulated GEN native payout credit verified",
+      "Final hosted payout readback checked at 1440x1000 and 390x844 with no horizontal overflow"
+    ]
   }
 }
