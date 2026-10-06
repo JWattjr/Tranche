@@ -48,6 +48,12 @@ On 6 October 2026, `npm run verify:proof` passed against the public StudioNet RP
 
 Typecheck and ESLint passed again on that date. Vercel completed a remote production build for deployment `dpl_DysXvDDxCgL23un2qsiYjJEmZtVv`, aliased to https://tranche-genlayer.vercel.app. The hosted ledger's finalized live read and layout were checked again at 1440×1000 and 390×844, with no horizontal overflow; captures are retained in `.impeccable/review/hosted-desktop.png` and `hosted-mobile.png`.
 
+A subsequent remote production build, `dpl_GJi3iogtTo6axXB7uqGkoX3Cgpdk`, published the five new browser proposal/specification receipts to the same alias. The hosted execution-proof page was inspected and displayed all five links. Typecheck and ESLint also passed for the browser receipt collector and expanded verifier.
+
+The expanded recheck initially stopped on a transient RPC response containing HTML instead of JSON. The verifier now retries failed RPC reads at most three times, with 15- and 30-second delays. Finalized execution errors, mismatched verdicts, source changes and incorrect native credits still fail verification; a failed read is never substituted with cached or mocked success.
+
+The subsequent complete recheck passed for all **51 finalized transactions**, including the production browser proposal, both criterion checks and their callbacks. It reconfirmed the three original verdicts, frozen specification hash, exact deployed source hash, original payout/refund credits and the production browser agreement hash. The production browser grant remains accepted and unfunded, with its funding signature pending; this successful receipt recheck does not claim that the remaining browser settlement flow is complete.
+
 The hosted 0.001 simulated GEN browser settlement agreement is accepted in Chrome. Its funding request is pending owner handling in the wallet extension. No funding or claim is represented as completed by the pending signature request.
 
 Run `npm run verify:proof` with public RPC access. It is read-only, spaces requests below the published per-minute limit, checks finalized execution and descendants, reads the three verdicts and frozen hash, and compares deployed source with the retained source hash. It also checks the live expiry/resubmission grant once its refund is recorded. Do not replace an RPC error or divergent outcome with a mocked success.
